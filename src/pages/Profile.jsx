@@ -32,8 +32,9 @@ export const Profile = () => {
   const [profileData, setProfileData] = useState({
     name: "Trần Xuân Lâm",
     code: "B21DCPT138",
-    linkGithub: "",
+    linkGithub: "https://github.com/lamdev3107/IOT_Dashboard.git",
     linkPDF: "",
+    linkAPI: "",
   });
 
   const form = useForm({
@@ -118,7 +119,7 @@ export const Profile = () => {
                   control={form.control}
                   name="code"
                   render={({ field }) => (
-                    <FormItem className="col-span-2 md:col-span-1 flex flex-col items-start">
+                    <FormItem className="col-span-2 md:col-span-1  flex flex-col items-start">
                       <FormLabel>Mã sinh viên</FormLabel>
                       <FormControl>
                         <Input {...field} disabled={!isEdit} />
@@ -132,8 +133,21 @@ export const Profile = () => {
                 control={form.control}
                 name="linkGithub"
                 render={({ field }) => (
-                  <FormItem className="col-span-2 mt-3 flex flex-col items-start">
+                  <FormItem className="col-span-2 mt-1 space-y-1 flex flex-col items-start">
                     <FormLabel>Link Github</FormLabel>
+                    <FormControl>
+                      <Input {...field} disabled={!isEdit} />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+              <FormField
+                control={form.control}
+                name="linkAPI"
+                render={({ field }) => (
+                  <FormItem className="col-span-2 mt-1 flex flex-col items-start">
+                    <FormLabel>Link API Docs</FormLabel>
                     <FormControl>
                       <Input {...field} disabled={!isEdit} />
                     </FormControl>
